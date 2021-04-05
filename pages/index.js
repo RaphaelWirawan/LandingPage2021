@@ -1,10 +1,21 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import MainPage from '../components/MainPage'
+import About from '../components/About' 
+import Drawer from '../components/Menu'
+import React from 'react'
 
 export default function Home() {
+  const [drawerOpen, setDrawerOpen] = React.useState(false)
+  const [x, setX] = React.useState(0)
+
+  const drawerSwitch = () => {
+    setDrawerOpen(!drawerOpen)
+  }
+
   return (
-    <div>
-     <h1>Landing Page</h1>
+    <div className='bg-offBlack min-h-screen flex flex-col justify-center items-center'>
+      <Drawer active={drawerOpen} drawerSwitch={drawerSwitch}/>
+     <MainPage/>
+     <About/>
     </div>
   )
 }
