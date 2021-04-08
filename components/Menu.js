@@ -1,51 +1,35 @@
+import Link from 'next/link';
+import React from 'react';
 
-import "../styles/drawerstyle.module.css"
+export default function Drawer() {
 
-import Link from 'next/link'
-/*
-import insta from "../public/insta.svg"
-import linked from "../public/linkedin.svg"
-import git from "../public/git.svg"
-*/
-const Drawer = props => {
+    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  
+    const handleBurger = () => {
+      setIsMenuOpen(!isMenuOpen);
+    };
+
   return (
-    <div
-      className="drawer-wrapper"
-      style={{ display: props.active ? "flex" : "none" }}
-      onClick={props.drawerSwitch}
-    >
-      <ul>
-        <li>
-          <Link href="/">
-            <h1>Home</h1>
-          </Link>
-        </li>
-        <li>
-          <h1>Blog</h1>
-        </li>
-        <li>
-          <h1>Contact</h1>
-        </li>
-        <li>
-          <Link href="/about">
-            <h1>About</h1>
-          </Link>
-        </li>
-      </ul>
+      <>
+      <img onClick={handleBurger} className='h-5 fixed right-0 top-0 m-5' src='/hamburger.png'/>
 
-      <div className="socialMediaLinks">
-        <a href="https://www.instagram.com/raphaelwirawan">
-          <img src='../public/insta.svg' alt="instagram" />
-        </a>
-        <a href="https://www.github.com/RaphaelWirawan">
-          <img src='../public/git.svg' alt="github" />
-        </a>
-        <a href="https://www.linkedin.com/in/raphaelwirawan">
-          <img src='../public/linkedin.svg' alt="linked in" style={{ marginRight: 0 }} />
-        </a>
-      </div>
-    </div>
+        <div
+          className={
+            "bg-red-500 fixed left-0 top-0 w-full h-full " +
+            (isMenuOpen ? "" : "hidden")
+          }
+          onClick={() => setIsMenuOpen(false)}
+        ></div>
+        <div
+          className={
+            "pointer-events-none text-black fixed left-0 top-0 w-full h-full " +
+            (isMenuOpen ? "" : "hidden")
+          }
+        >
+          <div className="bg-white m-32 pointer-events-auto">
+            <h1 className="text-8xl font-bold">I'm a menu!</h1>
+          </div>
+        </div>
+      </>
   )
 }
-
-export default Drawer
