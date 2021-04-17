@@ -5,3 +5,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .menu-h1 {
+    @apply text-3xl text-whiteWhite font-inter font-medium my-4 xl:my-5 2xl:mb-16;
+  }
+}

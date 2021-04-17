@@ -19,7 +19,8 @@ module.exports = {
         grey: '#DDDDDD',
         offBlack: '#0B0C0D',
         whiteWhite: '#F4F6F9',
-      }
+      },
+      opacity: {'98': '.9'}
     },
   },
   variants: {
