@@ -1,12 +1,13 @@
-import LeftLP from './LeftLP';
+import Button from '../components/Button';
+import Icons from '../components/Icons';
 
 export default function About() {
   return (
-    <div className='min-h-screen flex justify-center items-center h-screen '>
-     <div className='flex flex-row justify-around items-center w-3/4 h-5/6'>
-      <LeftLP/>
-      <img style={{ filter: "grayscale(45%)" }} className="h-3/4 shadow-md" src="/ravi1.jpg"/>
-     </div>
+    <div className='min-h-screen flex flex-col justify-center items-center sm:w-96 lg:w-1/2'>
+      <h1 className="text-gray-50 font-inter font-normal text-xl text-center leading-7 px-3">I'm Raphael but you can call me Ravi.</h1>
+      <h1 className="text-gray-50 font-inter font-normal text-xl text-center leading-7 mt-2 px-3">I love making and learning things, especially those that can change people's lives.</h1>
+        <Button/>
+        <Icons/>
     </div>
   )
 }
