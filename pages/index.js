@@ -9,6 +9,7 @@ export default function Home() {
      <Drawer/>
      <MainPage/>
      <About/>
+     <h1 className="text-gray-100 mb-7 font-medium">Made with &#127833; by Raphael</h1>
     </div>
   )
 }
